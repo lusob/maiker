@@ -30,7 +30,9 @@ To install the m**ai**ker extension, follow these steps:
 
 6. Reload Visual Studio Code.
 
-7. Use the `maiker.generateProject` command to generate a new project typing a description.
+7. Enter your OpenAI API key in maiker settings
+
+8. Use the `maiker.generateProject` command to generate a new project typing a description.
 
 Enjoy!
 
