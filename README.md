@@ -4,10 +4,7 @@ M**ai**ker is a VS Code extension that generates a project based on a user promp
 
 ## 🎥 Demo April 24th 2023
 
-<video width="960" height="540" controls allowfullscreen>
-  <source src="./assets/maiker.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+![Maiker video demo](https://raw.githubusercontent.com/lusob/maiker/main/assets/maiker.mp4)
 
 ## ✨ Features
 
