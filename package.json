@@ -60,5 +60,5 @@
     "url": "https://github.com/lusob/maiker.git"
   },
   "publisher": "lusob",
-  "icon": "./assets/icon.png"
+  "icon": "assets/icon.png"
 }
