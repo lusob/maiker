@@ -1,0 +1,58 @@
+{
+  "name": "maiker",
+  "displayName": "maiker",
+  "description": "AI powered coding projects generator",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.77.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "maiker.generateProject",
+        "title": "maiker: Generate a whole code project from a prompt"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "maiker Configuration",
+      "properties": {
+        "maiker.openaiApi": {
+          "type": "string",
+          "default": "",
+          "description": "Your OpenAI API key"
+        },
+        "maiker.promptContext": {
+          "type": "string",
+          "default": "You are a project code generator to create coding projects. Return code in separated files in json format {\"<filename>\": \"<code>\"} directly in the response content without line breaks using always simple quotes, and add also a README.md and Dockerfile, You don't talk english, just return the json. Create a code project based on the following user description",
+          "description": "The context string to use when prompting the user for input."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "dependencies": {
+    "openai": "^3.2.1",
+    "openai-api": "^1.3.1"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.77.0",
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "eslint": "^8.36.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^4.9.5",
+    "@vscode/test-electron": "^2.3.0"
+  }
+}
