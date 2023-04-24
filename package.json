@@ -2,14 +2,16 @@
   "name": "maiker",
   "displayName": "maiker",
   "description": "AI powered coding projects generator",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.77.0"
   },
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onCommand:maiker.generateProject"
+  ],
   "main": "./extension.js",
   "contributes": {
     "commands": [

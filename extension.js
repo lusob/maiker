@@ -2,6 +2,7 @@
 // Import the module and reference it with the alias vscode in your code below
 const vscode = require('vscode');
 const fs = require('fs');
+const path = require('path');
 
 const { Configuration, OpenAIApi } = require("openai");
 
@@ -49,21 +50,18 @@ function activate(context) {
 							{ "role": "user", "content": userInput }],
 						temperature: 0
 					});
-					console.log(completion.data.choices);
 					var msg_content = completion.data.choices[0].message.content
 					
 					// Preserve newlines, etc. - use valid JSON
 					msg_content = msg_content.replace(/`/g, "'").replace(/\\s/g, "\\s");
 
-					console.log("message content: " + msg_content)
-
 					const generatedCode = JSON.parse(msg_content);
-					console.log(generatedCode)
 					// Create directories for each file
 					for (const [filename, contents] of Object.entries(generatedCode)) {
 						//const directory = filename.substring(0, filename.lastIndexOf('/'));
-						console.log("filename: " + filename)
-						fs.writeFileSync("/home/lusob/projects/maiker-generated-project/" + filename, contents);
+						var file_path = path.join(vscode.workspace.workspaceFolders[0].uri.path, filename);
+
+						fs.writeFileSync(file_path, contents);
 					}
 
 					// Show success message to user
